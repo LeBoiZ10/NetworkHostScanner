@@ -14,6 +14,8 @@ s.close()
 ipArr = ip.split(".")
 ipStr = str(ipArr[0]) + "." + str(ipArr[1])
 
+count = 0
+
 #opening file to store online hosts
 db = open("Hosts.txt", "w")
 #for loop to iterate through all possible IPs in the network
@@ -24,7 +26,8 @@ for x in range(0, 255):
         #if the ping is successful then write it to the file
         if os.system("ping " + ip + " -n 1 -w 500") == 0:
             db.write(ip + "\n")
+            count += 1
+        print(count)
 
 #close file
 db.close()
-        
