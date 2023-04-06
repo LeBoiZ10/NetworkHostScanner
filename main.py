@@ -8,7 +8,6 @@ import socket
 with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
     s.connect(("8.8.8.8", 80))
     ip = s.getsockname()[0]
-s.close()
 
 #getting ip prefix
 ipArr = ip.split(".")
